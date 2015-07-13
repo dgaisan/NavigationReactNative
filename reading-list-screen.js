@@ -7,6 +7,7 @@ var React = require('react-native');
 var { StyleSheet, View, Text, ListView } = React;
 
 var links = require('./staticData');
+var ReadingListRow = require('./reading-list-row');
 
 var ReadingListScreen = React.createClass({
 
@@ -28,9 +29,7 @@ var ReadingListScreen = React.createClass({
 
     _renderRow: function(link) {
         return (
-            <View>
-                <Text>{link.title}</Text>
-            </View>
+           <ReadingListRow key={link.id} link={link} />
         );
     }
 });
