@@ -35,17 +35,20 @@ var styles = StyleSheet.create({
         borderBottomColor: 'rgba(0, 0, 0, 0.1)'
     },
     textContainer: {
-
+        flex: 1,
+        justifyContent: 'flex-start'
     },
     linkImage: {
         width: 60,
-        height: 60
+        height: 60,
+        backgroundColor: '#dddddd',
+        marginRight: 10
     },
     linkTitle: {
-
+        fontWeight: 'bold'
     },
     linkHost: {
-
+        color: '#999999'
     }
 });
 
