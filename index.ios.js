@@ -22,7 +22,7 @@ var NavigationApp = React.createClass({
             <NavigatorIOS
                 style={styles.navigator}
                 initialRoute={{
-                    title: 'My Title',
+                    title: 'List of Items',
                     component: ReadingListScreen
                 }}
                 />

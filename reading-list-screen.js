@@ -8,10 +8,12 @@ var { StyleSheet, View, Text, ListView } = React;
 
 var links = require('./staticData');
 var ReadingListRow = require('./reading-list-row');
+var ViewLinkScreen = require('./view-link-screen');
 
 var ReadingListScreen = React.createClass({
 
     getInitialState: function() {
+        console.log('Initializing ReadingListScreen');
         var ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1.id !== r2.id});
 
         return {
@@ -27,9 +29,21 @@ var ReadingListScreen = React.createClass({
         );
     },
 
+    _selectLink: function(link) {
+        this.props.navigator.push({
+            title: link.title,
+            component: ViewLinkScreen,
+            passProps: {link}
+        });
+    },
+
     _renderRow: function(link) {
         return (
-           <ReadingListRow key={link.id} link={link} />
+           <ReadingListRow
+               key={link.id}
+               onSelect={() => this._selectLink(link)}
+               link={link}
+           />
         );
     }
 });
